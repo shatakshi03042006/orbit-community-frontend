@@ -1,0 +1,113 @@
+.workspace {
+  height: calc(100vh - 76px);
+  padding-top: 24px;
+  padding-bottom: 24px;
+  overflow: hidden;
+  align-items: stretch;
+}
+
+.left-rail,
+.right-rail {
+  position: static;
+  height: 100%;
+  min-height: 0;
+  overflow: hidden;
+}
+
+.left-rail {
+  display: flex;
+  flex-direction: column;
+}
+
+.rail-bottom {
+  flex-shrink: 0;
+  margin-top: auto;
+}
+
+.main-column {
+  height: 100%;
+  min-height: 0;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  scrollbar-gutter: stable;
+}
+
+@media (max-height: 820px) and (min-width: 761px) {
+  .workspace {
+    padding-top: 16px;
+    padding-bottom: 16px;
+  }
+
+  .profile-mini {
+    padding-top: 12px;
+    padding-bottom: 12px;
+  }
+
+  .main-nav {
+    gap: 3px;
+    margin-top: 12px;
+  }
+
+  .nav-link {
+    padding-top: 9px;
+    padding-bottom: 9px;
+  }
+
+  .rail-bottom {
+    padding-top: 10px;
+  }
+
+  .rail-note {
+    display: none;
+  }
+}
+
+@media (max-height: 620px) and (min-width: 761px) {
+  .profile-mini {
+    display: none;
+  }
+
+  .main-nav {
+    margin-top: 0;
+  }
+}
+
+@media (max-width: 760px) {
+  .workspace {
+    height: auto;
+    min-height: calc(100svh - 64px);
+    overflow: visible;
+    padding: 14px 12px 32px;
+  }
+
+  .left-rail,
+  .main-column {
+    height: auto;
+    overflow: visible;
+  }
+
+  .left-rail {
+    margin-bottom: 14px;
+  }
+
+  .rail-bottom {
+    display: flex;
+    justify-content: flex-end;
+    padding-top: 4px;
+  }
+
+  .rail-note,
+  .rail-bottom > small {
+    display: none;
+  }
+
+  .signout {
+    width: auto;
+    margin-top: 4px;
+  }
+
+  .main-column {
+    max-width: none;
+    scrollbar-gutter: auto;
+  }
+}
